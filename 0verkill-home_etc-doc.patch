@@ -1,0 +1,14 @@
+diff -Nru 0verkill-0.16/doc/doc.html 0verkill-0.16.new/doc/doc.html
+--- 0verkill-0.16/doc/doc.html	Sat Dec 15 18:51:39 2001
++++ 0verkill-0.16.new/doc/doc.html	Sat Mar 15 13:23:11 2003
+@@ -204,7 +204,9 @@
+ <p><h2><a name="cfg">Configure File</a></h2>
+ 
+ <p>When you run 0verkill client for the first time, <b>.0verkill</b> file
+-appears in your home directory. This file contains address of the server, your
++appears in your home directory. When <b>CONFIG_DIR</b> is set
++<b>$CONFIG_DIR/0verkill</b> will be used instead.
++This file contains address of the server, your
+ color and name. Everytime you run 0verkill, these values will be taken as
+ default.
+ 
