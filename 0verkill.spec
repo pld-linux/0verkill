@@ -38,7 +38,7 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %patch -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
