@@ -1,4 +1,4 @@
-Summary:	0verkill - ASCII-art multiplayer game 
+Summary:	0verkill - ASCII-art multiplayer game
 Summary(pl):	0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.15
@@ -40,9 +40,9 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %build
 aclocal
 autoconf
-%configure 
+%configure
 %{__make}
-%{__make} x0verkill XLIBS="-L%{_prefix}/X11R6/lib -lX11"
+%{__make} x0verkill XLIBS="-L/usr/X11R6/lib -lX11"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,10 +54,10 @@ install server $RPM_BUILD_ROOT%{_bindir}/0verkill-server
 install test_server $RPM_BUILD_ROOT%{_bindir}/0verkill-test_server
 install bot $RPM_BUILD_ROOT%{_bindir}/0verkill-bot
 
-for l in data/* ; do 
+for l in data/* ; do
 	sed -e 's@grx/@%{_datadir}/0verkill/grx/@' < $l >  $RPM_BUILD_ROOT%{_datadir}/%{name}/$l
 done
-install grx/* $RPM_BUILD_ROOT%{_datadir}/%{name}/grx 
+install grx/* $RPM_BUILD_ROOT%{_datadir}/%{name}/grx
 
 gzip -9nf doc/AUTHORS doc/CHANGELOG doc/*.txt
 
