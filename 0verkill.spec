@@ -2,7 +2,7 @@ Summary:	0verkill - ASCII-art multiplayer game
 Summary(pl):	0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.15
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Games
 Group(de):	Applikationen/Spiele
@@ -24,6 +24,8 @@ BuildRequires:	XFree86-devel
 %patch -p1
 
 %build
+aclocal
+autoconf
 %configure 
 %{__make}
 %{__make} x0verkill XLIBS="-L%{_prefix}/X11R6/lib -lX11"
