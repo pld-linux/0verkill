@@ -59,17 +59,14 @@ for l in data/* ; do
 done
 install grx/* $RPM_BUILD_ROOT%{_datadir}/%{name}/grx
 
-gzip -9nf doc/AUTHORS doc/CHANGELOG doc/*.txt
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/AUTHORS.gz doc/CHANGELOG.gz doc/*.html doc/*.txt.gz
+%doc doc/AUTHORS doc/CHANGELOG doc/*.{txt,html}
 %attr(755,root,root) %{_bindir}/*
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}
 
 %files x11
 %defattr(644,root,root,755)
