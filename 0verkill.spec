@@ -15,6 +15,7 @@ BuildRequires:	XFree86-devel
 
 %description
 0verkill is an ASCII-art multiplayer shooting game.
+
 %description -l pl
 0verkill jest strzelank± multiplayer z grafik± ASCII.
 
