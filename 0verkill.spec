@@ -7,8 +7,7 @@ License:	GPL
 Group:		Applications/Games
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/%{name}/release/%{name}-%{version}.tgz
 Patch0:		%{name}-datadir.patch
-Patch1:		%{name}-home_etc.patch
-Patch2:		%{name}-home_etc-doc.patch
+Patch1:		%{name}-etc_dir.patch
 URL:		http://artax.karlin.mff.cuni.cz/~brain/%{name}/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,7 +38,6 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__aclocal}
