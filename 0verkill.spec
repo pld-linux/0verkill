@@ -48,4 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/AUTHORS.gz doc/CHANGELOG.gz doc/*.html doc/*.txt.gz
 %attr(755,root,root) %{_bindir}/*
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
