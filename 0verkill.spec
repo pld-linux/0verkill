@@ -2,7 +2,7 @@ Summary:	0verkill - ASCII-art multiplayer game
 Summary(pl):	0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.16
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Games
 #Source0-md5:	814097fc21a82723a40ec8ae5dd792a7
@@ -45,7 +45,7 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %{__autoconf}
 %configure
 %{__make}
-%{__make} x0verkill XLIBS="-L/usr/X11R6/lib -lX11"
+%{__make} x0verkill XLIBS="-L/usr/X11R6/%{_lib} -lX11"
 
 %install
 rm -rf $RPM_BUILD_ROOT
