@@ -39,7 +39,7 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 %{__make} x0verkill XLIBS="-L/usr/X11R6/lib -lX11"
