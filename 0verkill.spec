@@ -5,6 +5,7 @@ Version:	0.16
 Release:	2
 License:	GPL
 Group:		Applications/Games
+#Source0-md5:	814097fc21a82723a40ec8ae5dd792a7
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/%{name}/release/%{name}-%{version}.tgz
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-etc_dir.patch
