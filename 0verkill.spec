@@ -9,13 +9,13 @@ Group:		Applications/Games
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/%{name}/release/%{name}-%{version}.tgz
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-etc_dir.patch
-URL:		http://artax.karlin.mff.cuni.cz/~brain/%{name}/
+URL:		http://artax.karlin.mff.cuni.cz/~brain/0verkill/
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_x11bindir	%{_prefix}/X11R6/bin
+%define		_x11bindir	/usr/X11R6/bin
 
 %description
 0verkill is an ASCII-art multiplayer shooting game.
