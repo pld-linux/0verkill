@@ -15,11 +15,27 @@ BuildRequires:	automake
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_x11bindir	%{_prefix}/X11R6/bin
+
 %description
 0verkill is an ASCII-art multiplayer shooting game.
 
 %description -l pl
 0verkill jest strzelank± multiplayer z grafik± ASCII.
+
+%package x11
+Summary:	X version of 0verkill
+Summary(pl):	Wersja 0verkill pod X
+Group:		X11/Applications/Games
+Group(de):	X11/Applikationen/Spiele
+Group(pl):	X11/Aplikacje/Gry
+Requires:	%{name} = %{version}
+
+%description x11
+This package allows you to run an 0verkill client in an X window.
+
+%description x11 -l pl
+Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 
 %prep
 %setup -q
@@ -34,9 +50,10 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}/{grx,data}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}/{grx,data},%{_x11bindir}}
 
-install x0verkill 0verkill avi $RPM_BUILD_ROOT%{_bindir}
+install 0verkill avi $RPM_BUILD_ROOT%{_bindir}
+install x0verkill $RPM_BUILD_ROOT%{_x11bindir}
 install server $RPM_BUILD_ROOT%{_bindir}/0verkill-server
 install test_server $RPM_BUILD_ROOT%{_bindir}/0verkill-test_server
 install bot $RPM_BUILD_ROOT%{_bindir}/0verkill-bot
@@ -57,3 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
+
+%files x11
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_x11bindir}/*
