@@ -5,8 +5,6 @@ Version:	0.15
 Release:	2
 License:	GPL
 Group:		Applications/Games
-Group(de):	Applikationen/Spiele
-Group(pl):	Aplikacje/Gry
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/%{name}/release/%{name}-%{version}.tgz
 Patch0:		%{name}-datadir.patch
 URL:		http://artax.karlin.mff.cuni.cz/~brain/%{name}/
@@ -27,8 +25,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Summary:	X version of 0verkill
 Summary(pl):	Wersja 0verkill pod X
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(pl):	X11/Aplikacje/Gry
 Requires:	%{name} = %{version}
 
 %description x11
