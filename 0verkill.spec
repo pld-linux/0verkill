@@ -1,5 +1,5 @@
 Summary:	0verkill - ASCII-art multiplayer game
-Summary(pl):	0verkill - gra multiplayer w ASCII
+Summary(pl.UTF-8):   0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.16
 Release:	4
@@ -18,19 +18,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 0verkill is an ASCII-art multiplayer shooting game.
 
-%description -l pl
-0verkill jest strzelank± multiplayer z grafik± ASCII.
+%description -l pl.UTF-8
+0verkill jest strzelankÄ… multiplayer z grafikÄ… ASCII.
 
 %package x11
 Summary:	X version of 0verkill
-Summary(pl):	Wersja 0verkill pod X
+Summary(pl.UTF-8):   Wersja 0verkill pod X
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description x11
 This package allows you to run an 0verkill client in an X window.
 
-%description x11 -l pl
+%description x11 -l pl.UTF-8
 Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 
 %prep
