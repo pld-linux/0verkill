@@ -10,9 +10,9 @@ Source0:	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/%{name}-%{versi
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-etc_dir.patch
 URL:		http://artax.karlin.mff.cuni.cz/~brain/0verkill/
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	xorg-lib-libXpm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,10 +41,9 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %build
 %{__aclocal}
 %{__autoconf}
-%configure
+%configure \
+	--with-x
 %{__make}
-%{__make} x0verkill \
-	XLIBS="-L/usr/X11R6/%{_lib} -lX11"
 
 %install
 rm -rf $RPM_BUILD_ROOT
