@@ -2,7 +2,7 @@ Summary:	0verkill - ASCII-art multiplayer game
 Summary(pl.UTF-8):	0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.16
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Games
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/%{name}-%{version}.tgz
