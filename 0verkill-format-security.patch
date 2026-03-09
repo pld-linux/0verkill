@@ -1,0 +1,38 @@
+--- 0verkill-0.16.orig/cfg.h	2001-12-16 16:48:56.000000000 +0100
++++ 0verkill-0.16/cfg.h	2026-03-09 00:00:00.000000000 +0100
+@@ -146,20 +146,20 @@
+ 	#undef ERROR
+ 	#ifdef SERVER
+ 		extern int			consoleApp;
+-		#define ERROR(a)	{if (!console_ok)c_shutdown();if(consoleApp)fprintf(stderr,a);}
++		#define ERROR(a)	{if (!console_ok)c_shutdown();if(consoleApp)fprintf(stderr,"%s",(const char *)(a));}
+ 		#define EXIT(a)		{if (!consoleApp)ReportStatusToSCMgr(SERVICE_STOPPED, NO_ERROR, 0);exit(a);}
+ 	#else
+-		#define ERROR(a)	{if (!console_ok)c_shutdown();fprintf(stderr,a);}
++		#define ERROR(a)	{if (!console_ok)c_shutdown();fprintf(stderr,"%s",(const char *)(a));}
+ 		#define EXIT(a)		{exit(a);}
+ 	#endif
+ 	#define random		rand
+ #else
+ 	#define long_long	long long
+ 	#ifdef CLIENT
+-		#define ERROR(a)	{if (!console_ok)c_shutdown();fprintf(stderr,a);}
++		#define ERROR(a)	{if (!console_ok)c_shutdown();fprintf(stderr,"%s",(const char *)(a));}
+ 	#else
+-		#define ERROR(a)	{fprintf(stderr,a);}
++		#define ERROR(a)	{fprintf(stderr,"%s",(const char *)(a));}
+ 	#endif
+ 	#define EXIT(a)		exit(a);
+ #endif
+ 
+ 
+--- 0verkill-0.16.orig/error.h	2001-12-16 16:48:56.000000000 +0100
++++ 0verkill-0.16/error.h	2026-03-09 00:00:00.000000000 +0100
+@@ -7,6 +7,7 @@
+ 
+ #include "cfg.h"
+ #include "config.h"
++#include <string.h>
+ 
+ #define DUMMY ((void *)-1L)
+ 

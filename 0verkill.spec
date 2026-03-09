@@ -2,13 +2,15 @@ Summary:	0verkill - ASCII-art multiplayer game
 Summary(pl.UTF-8):	0verkill - gra multiplayer w ASCII
 Name:		0verkill
 Version:	0.16
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Games
 Source0:	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/%{name}-%{version}.tgz
 #Source0-md5:	814097fc21a82723a40ec8ae5dd792a7
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-etc_dir.patch
+# local patch: fix unsafe non-literal format string usage with modern hardening flags
+Patch2:		%{name}-format-security.patch
 URL:		http://artax.karlin.mff.cuni.cz/~brain/0verkill/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -37,10 +39,12 @@ Ten pakiet pozwala na uruchomienie klienta 0verkill w oknie X.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
+export CFLAGS="%{rpmcflags} -fcommon"
 %configure \
 	--with-x
 %{__make}
